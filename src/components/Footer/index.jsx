@@ -87,7 +87,7 @@ const Footer = () => {
             <div className="row">
               <div className="col">
                 <h1 className="mb-3 mb-md-0 font-size-xxs text-white text-center border-none">
-                  © 2024 All rights reserved. Gạch 315 designed by Ha Hai Binh.
+                  © 2024 All rights reserved. Gạch 315 designed by me.
                 </h1>
               </div>
             </div>
