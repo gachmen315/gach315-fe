@@ -26,7 +26,7 @@ const Carousel = ({ children: sliders, autoSlide = false, autoSlideInterval = 50
             >
                 {sliders}
             </div>
-            <div className="absolute inset-0 flex items-center justify-between p-4 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <button
                     onClick={prev}
                     disabled={curr === 0}
