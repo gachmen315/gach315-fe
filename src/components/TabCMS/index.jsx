@@ -61,22 +61,27 @@ const TabCMS = () => {
 
   const navigate = useNavigate();
   const { user } = useAuth();
+  console.log('user', user)
   const [selectedKey, setSelectedKey] = useState('1-1');
 
   useEffect(() => {
-    if (!user) {
-      navigate(PATH.authCMS);  // Chuyển hướng đến trang đăng nhập nếu không có user
-    } else if (user.roleName === 'Admin') {
+    // if (!user) {
+    //   navigate(PATH.authCMS);  // Chuyển hướng đến trang đăng nhập nếu không có user
+    // } else if (user.roleName === 'Admin') {
+    //   navigate(PATH.tabCMS);
+    // } else {
+    //   navigate(PATH.authCMS);
+    // }
+    if (user?.roleName === 'Admin') {
       navigate(PATH.tabCMS);
     } else {
       navigate(PATH.authCMS);
     }
-
   }, [user, navigate]);
 
   const handleMenuClick = ({ key }) => {
     setSelectedKey(key);
-    navigate(key); 
+    navigate(key);
   };
 
   const menuItems = [
@@ -89,7 +94,7 @@ const TabCMS = () => {
       key: '/admin/branch-cms-management',
       icon: <TeamOutlined />,
       label: 'Quản lý thương hiệu',
-    },    
+    },
     {
       key: '/admin/branch-category-cms-management',
       icon: <UserSwitchOutlined />,
@@ -127,7 +132,7 @@ const TabCMS = () => {
             style={{
               background: colorBgContainer,
               height: '100vh',
-              position: 'fixed', 
+              position: 'fixed',
               left: 0,
               top: 0,
               bottom: 0,
@@ -155,7 +160,7 @@ const TabCMS = () => {
           </Sider>
           <Content
             style={{
-              marginLeft: 255, 
+              marginLeft: 255,
             }}
           >
             <Outlet />
