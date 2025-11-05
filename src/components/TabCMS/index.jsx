@@ -61,8 +61,10 @@ const TabCMS = () => {
 
   const navigate = useNavigate();
   const { user } = useAuth();
-  console.log('user', user)
+  console.log('user ===', user)
   const [selectedKey, setSelectedKey] = useState('1-1');
+  const hhb = JSON.parse(localStorage.getItem('user'));
+  console.log('hhb ===', hhb)
 
   useEffect(() => {
     // if (!user) {
@@ -72,12 +74,13 @@ const TabCMS = () => {
     // } else {
     //   navigate(PATH.authCMS);
     // }
-    if (user?.roleName === 'Admin') {
+
+    if (hhb?.roleName === "amdin" || hhb?.fullName === "Admin") {
       navigate(PATH.tabCMS);
     } else {
       navigate(PATH.authCMS);
     }
-  }, [user, navigate]);
+  }, [navigate]);
 
   const handleMenuClick = ({ key }) => {
     setSelectedKey(key);

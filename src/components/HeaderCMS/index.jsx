@@ -50,13 +50,14 @@ const HeaderCMS = () => {
                         label: (
                           <span
                             className="user-link block cursor-pointer"
-                            onClick={() => {
-                              toast.dismiss();
-                              dispatch(logoutAction());
-                              toast.warn('Bạn đã đăng xuất khỏi tài khoản');
+                            onClick={async () => {
+                              await toast.dismiss();
+                              await dispatch(logoutAction());
+                              await toast.warn('Bạn đã đăng xuất khỏi tài khoản');
+                              await window.location.reload();
                             }}
                           >
-                            Đăng xuất
+                            Đăng xuấtaaaaaa
                           </span>
                         ),
                       }
